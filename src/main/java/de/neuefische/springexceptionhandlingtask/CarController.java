@@ -22,15 +22,4 @@ public class CarController {
     String getAllCars() {
         throw new NoSuchElementException("No Cars found");
     }
-
-
-    @ExceptionHandler(IllegalArgumentException.class)
-    @ResponseStatus(HttpStatus.BAD_REQUEST)
-    public ErrorMessage handleIllegalArgumentException(IllegalArgumentException e) {
-        return new ErrorMessage(
-                e.getMessage(),
-                LocalDateTime.now(),
-                HttpStatus.BAD_REQUEST.value()
-        );
-    }
 }
